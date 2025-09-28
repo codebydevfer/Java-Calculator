@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
+import javax.sound.sampled.Line;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -49,5 +50,47 @@ public class Calculator {
         displayPanel.add(displayLabel);
         frame.add(displayPanel, BorderLayout.NORTH);
 
+        buttonsPanel.setLayout(new GridLayout(5,4)); //5 rows | 4 columns
+        buttonsPanel.setBackground(darkSmooth);
+        frame.add(buttonsPanel);
+
+        for (int i = 0; i < buttonValues.length; i++){
+            JButton button = new JButton();
+            String buttonValue = buttonValues[i];
+            button.setFont(new Font("Arial", Font.PLAIN, 30));
+            button.setText(buttonValue);
+            button.setFocusable(false);
+            button.setBorder(new LineBorder(darkDarker));
+            if (Arrays.asList(topSymbols).contains(buttonValue)){
+                button.setBackground(light);
+                button.setForeground(black);
+            }
+            else if (Arrays.asList(rightSymbols).contains(buttonValue)){
+                button.setBackground(blue);
+                button.setForeground(black);
+            }
+            else {
+                button.setBackground(darkDarker);
+                button.setForeground(black);
+            }
+
+            buttonsPanel.add(button);
+
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    JButton button = (JButton) e.getSource();
+                    String buttonValue = button.getText();
+                    if (Arrays.asList(rightSymbols).contains(buttonValue)){
+
+                    }
+                    else if (Arrays.asList(topSymbols).contains(buttonValue)){
+
+                    }
+                    else { //digits or .
+
+                    }
+                }
+            });
+        }
     }
 }
