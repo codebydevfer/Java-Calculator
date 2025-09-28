@@ -6,6 +6,11 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+//TODO
+//Make sqr button work
+//Add more features
+//Make a better styling for the UI
+
 public class Calculator {
     int boardWidth = 360; //window
     int boardHeight = 540;
