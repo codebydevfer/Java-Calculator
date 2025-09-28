@@ -10,6 +10,7 @@ import javax.swing.border.LineBorder;
 //Make sqr button work
 //Add more features
 //Make a better styling for the UI
+//Add comments
 
 public class Calculator {
     int boardWidth = 360; //window
